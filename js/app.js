@@ -1,4 +1,4 @@
 /*
 * add javascript here
 */
-export function() { console.log('Hello'); };
+export function app() { console.log('Hello'); };
