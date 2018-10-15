@@ -1,0 +1,19 @@
+{
+  "name": "todos",
+  "version": "0.0.0",
+  "description": "Implementation of todomvc.com ## Spec sheet <https://github.com/tastejs/todomvc/blob/master/app-spec.md>",
+  "main": "js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcMcIntosh/todos.git"
+  },
+  "author": "Marc McIntosh <marcmcintosh1987@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MarcMcIntosh/todos/issues"
+  },
+  "homepage": "https://github.com/MarcMcIntosh/todos#readme"
+}
