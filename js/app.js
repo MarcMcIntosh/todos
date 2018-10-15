@@ -1,4 +1,4 @@
 /*
 * add javascript here
 */
-export default funtion() { console.log('Hello'); };
+export default function() { console.log('Hello'); };
