@@ -81,11 +81,13 @@
 			// https://www.w3schools.com/jsref/dom_obj_all.asp
 			
 			function addHeader(elem) {
-				const root = elem.createElement('header');
+				const root = document.createElement('header');
+				
 				root.className = 'header';
 				
 				const header = document.createElement('h1');
 				const text = document.createTextNode('ToDos');
+				
 				header.appendChild(text);
 
 				root.appendChild(header);
@@ -95,6 +97,8 @@
 			        input.attribute('placeholder', "What needs to be done?");
 			        input.attribute('autofocus', true);
 				root.appendChild(input);
+
+				elem.appendChild(root);
 			}
 			addHeader(todoRootElement);
 
