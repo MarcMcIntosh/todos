@@ -32,9 +32,7 @@
 			/* <section class="main">
 				<input id="toggle-all" class="toggle-all" type="checkbox">                                                  
                                 <label for="toggle-all">Mark all as complete</label>
-				<ul class="todo-list">
-				  {items.map(ListItem)}
-				</ul>
+				<ul class="todo-list">[ITEMS]</ul>
 			</section> */
 
 			/* Footer */
@@ -54,7 +52,7 @@
 			/* ListItem */
 			/* <li class=(completed ? "completed" : (editting) ? 'editting' : "")>
 			  	<div class="view">
-			  		<input class="toggle" type="checkbox" checked>                                      
+					<input class="toggle" type="checkbox" checked>                                      
                                         <label>Taste JavaScript</label>                                                     
                                         <button class="destroy"></button>
 				</div>
@@ -69,7 +67,11 @@
 
 			/* App state: { editing, todos } */
 				
-       			console.log('Hello');
+       			const todoRootElement = document.getElementById('app');
+			const hello = document.createElement('h1')
+			hello.innerHTML = "Hello";
+			todoRootElement.appendChild(hello);
+
 		</script>
 	</body>
 </html>
