@@ -29,11 +29,11 @@
 			
 			/* Main */
 			// should only display is there are todos
-			/* <section class="main">
-				<input id="toggle-all" class="toggle-all" type="checkbox">                                                  
-                                <label for="toggle-all">Mark all as complete</label>
-				<ul class="todo-list">[ITEMS]</ul>
-			</section> */
+			// <section class="main">
+			//	<input id="toggle-all" class="toggle-all" type="checkbox">                                                  
+                        //        <label for="toggle-all">Mark all as complete</label>
+			//	<ul class="todo-list">[ITEMS]</ul>
+			// </section>
 
 			/* Footer */
 			// should only display if there are todos
@@ -66,11 +66,37 @@
 			/* Methods? save, update, delete */
 
 			/* App state: { editing, todos } */
-				
-       			const todoRootElement = document.getElementById('app');
+
+			// See here for advice on writing componenets
+			// https://github.com/aspittel/rainbow-word-webcomponent/blob/master/script.js
+       			
+			const todoRootElement = document.getElementById('app');
 			const hello = document.createElement('h1')
 			hello.createTextNode("Hello");
 			todoRootElement.appendChild(hello);
+
+			/* Header */
+			// const header = document.createElement('header');
+			// header.className = 'header';
+			// https://www.w3schools.com/jsref/dom_obj_all.asp
+			
+			function addHeader(elem) {
+				const root = elem.createElement('header');
+				root.className = 'header';
+				
+				const header = document.createElement('h1');
+				header.createTextNode('ToDos');
+				root.appendChild(header);
+
+			        const input = document.createElement('input');
+			        input.className = "new-todo";
+			        input.attribute('placeholder', "What needs to be done?");
+			        input.attribute('autofocus', true);
+				root.appendChild(input);
+			}
+			addHeader(todoRootElement);
+
+			
 
 		</script>
 	</body>
