@@ -10,3 +10,29 @@
   <!-- Hidden if no completed items are left ↓ -->
   <button class="clear-completed">Clear completed</button>
 </footer>*/
+
+function totalTodos(numberOfToDos) {
+  const root = document.createElement('span');
+  root.className = "todo-count";
+  const strong = document.createElement('strong');
+  const strongText = document.createTextNode(numberOfToDos);
+
+  strong.appendChild(strongText);
+  root.appendChild(strong);
+
+  const itemText = numberOfToDos === 1 ? 'item' : 'items';
+  const text = document.createTextNode(itemText + ' left');
+
+  root.appendChild(text);
+
+  return root;
+
+}
+
+export default function footer() {
+  const root = document.createElement('footer');
+  root.className = "footer";
+
+
+
+}
