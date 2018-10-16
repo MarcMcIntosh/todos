@@ -1,14 +1,14 @@
 /*
 * add imports javascript here
 */
-
+// https://www.contentful.com/blog/2017/04/04/es6-modules-support-lands-in-browsers-is-it-time-to-rethink-bundling/
 function header() {
   const element = document.createElement('header');
   element.className = 'header';
 
-  const header = document.createElement('h1');
+  const h1 = document.createElement('h1');
   const text = document.createTextNode('todos');
-  header.appendChild(text);
+  h1.appendChild(text);
 
   const input = document.createElement('input');
   input.className = "new-todo";
@@ -16,7 +16,7 @@ function header() {
   input.setAttribute('autofocus', true);
 
 
-  element.appendChild(header);
+  element.appendChild(h1);
   element.appendChild(input);
 
   return element;
