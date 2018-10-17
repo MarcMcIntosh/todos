@@ -12,10 +12,11 @@
 </footer>*/
 
 function totalTodos() {
+  const numberOfToDos = localStorage.length;
   const root = document.createElement('span');
   root.className = "todo-count";
   const strong = document.createElement('strong');
-  const strongText = document.createTextNode(localStorage.length);
+  const strongText = document.createTextNode(numberOfToDos);
 
   strong.appendChild(strongText);
   root.appendChild(strong);
