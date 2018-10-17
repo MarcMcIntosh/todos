@@ -14,7 +14,7 @@ function app() {
   element.appendChild(header(store));
 
   // footer
-  if (Object.keys(state.posts)) element.appendChild(footer());
+  if (Object.keys(state.posts).length) element.appendChild(footer());
 
   return element;
 };
