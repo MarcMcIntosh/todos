@@ -3,7 +3,7 @@
 */
 // https://www.contentful.com/blog/2017/04/04/es6-modules-support-lands-in-browsers-is-it-time-to-rethink-bundling/
 import { header, footer } from './views/index.js';
-import store from './store';
+import store from './store.js';
 
 const state = { editting: false, posts: store.getAll() };
 
