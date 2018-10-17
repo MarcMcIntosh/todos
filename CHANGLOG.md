@@ -12,13 +12,13 @@
 ### New todo
 
 + [ ] New todos are entered in the input at the top of the app.
-+ [ ] The input element should be focused when the page is loaded, preferably by using the `autofocus` input attribute.
++ [x] The input element should be focused when the page is loaded, preferably by using the `autofocus` input attribute.
 + [ ] Pressing Enter creates the todo, appends it to the todo list, and clears the input. Make sure to `.trim()` the input and then check that it's not empty before creating a new todo.
 
 ### Mark all as complete
 
 + [ ] This checkbox toggles all the todos to the same state as itself.
-+ [ ] Make sure to clear the checked state after the "Clear completed" button is clicked. 
++ [ ] Make sure to clear the checked state after the "Clear completed" button is clicked.
 + [ ] The "Mark all as complete" checkbox should also be updated when single todo items are checked/unchecked. Eg. When all the todos are checked it should also get checked.
 
 ### Item
@@ -40,8 +40,8 @@ A todo item has three possible interactions:
 ### Counter
 
 + [ ] Displays the number of active todos in a pluralized form.
-+ [ ] Make sure the number is wrapped by a `<strong>` tag.
-+ [ ] Also make sure to pluralize the `item` word correctly: `0 items`, `1 item`, `2 items`. Example: **2** items left
++ [x] Make sure the number is wrapped by a `<strong>` tag.
++ [x] Also make sure to pluralize the `item` word correctly: `0 items`, `1 item`, `2 items`. Example: **2** items left
 
 ### Clear completed button
 
@@ -51,7 +51,7 @@ A todo item has three possible interactions:
 
 + [ ] Your app should dynamically persist the todos to localStorage.
 + [ ] If the framework has capabilities for persisting data (e.g. Backbone.sync), use that. Otherwise, use vanilla localStorage.
-+ [ ] If possible, use the keys `id`, `title`, `completed` for each item. 
++ [ ] If possible, use the keys `id`, `title`, `completed` for each item.
 + [ ] Make sure to use this format for the localStorage name: `todos-[framework]`.
 + [ ] Editing mode should not be persisted.
 
@@ -59,7 +59,7 @@ A todo item has three possible interactions:
 
 Routing is required for all implementations. If supported by the framework, use its built-in capabilities. Otherwise, use the  [Flatiron Director](https://github.com/flatiron/director) routing library located in the `/assets` folder.
 
-+ [ ] The following routes should be implemented: `#/` (all - default), `#/active` and `#/completed` (`#!/` is also allowed). 
++ [ ] The following routes should be implemented: `#/` (all - default), `#/active` and `#/completed` (`#!/` is also allowed).
 + [ ] When the route changes, the todo list should be filtered on a model level and the `selected` class on the filter links should be toggled.
 + [ ] When an item is updated while in a filtered state, it should be updated accordingly. E.g. if the filter is `Active` and the item is checked, it should be hidden.
 + [ ] Make sure the active filter is persisted on reload.
