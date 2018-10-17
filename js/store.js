@@ -12,7 +12,7 @@ function setItem({
   created_at = 0,
   label,
 } = {}) {
-  const updated_at = new Date();
+  const updated_at = new Date().toJSON();
 
   const obj = {
     id: id || `todos-marc-${created_at || updated_at}`,

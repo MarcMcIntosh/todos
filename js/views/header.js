@@ -17,10 +17,7 @@ export default function header(store) {
   input.className = "new-todo";
   input.setAttribute('placeholder', "What needs to be done?");
   input.setAttribute('autofocus', true);
-  input.onchange = (event) => {
-    console.log(event);
-    store.createItem(event.target.value.trim());
-  }
+  input.onchange = (event) => store.createItem(event.target.value.trim());
 
 
 
