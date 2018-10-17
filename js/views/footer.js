@@ -32,6 +32,6 @@ function totalTodos(numberOfToDos) {
 export default function footer() {
   const root = document.createElement('footer');
   root.className = "footer";
-  root.appendChild(totalTodos);
+  root.appendChild(totalTodos());
   return root;
 }
