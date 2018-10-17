@@ -11,11 +11,11 @@
   <button class="clear-completed">Clear completed</button>
 </footer>*/
 
-function totalTodos(numberOfToDos) {
+function totalTodos() {
   const root = document.createElement('span');
   root.className = "todo-count";
   const strong = document.createElement('strong');
-  const strongText = document.createTextNode(numberOfToDos);
+  const strongText = document.createTextNode(localStorage.length);
 
   strong.appendChild(strongText);
   root.appendChild(strong);
