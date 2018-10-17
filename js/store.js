@@ -32,7 +32,7 @@ function getItem(id) {
 
 function createItem(label) {
   setItem({ label });
-  return getAlL();
+  return getAll();
 }
 
 function updateItem(item) {
