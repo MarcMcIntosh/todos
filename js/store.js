@@ -31,7 +31,8 @@ function getItem(id) {
 }
 
 function createItem(label) {
-  return setItem({ label });
+  setItem({ label });
+  return getAlL();
 }
 
 function updateItem(item) {
