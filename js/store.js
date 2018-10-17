@@ -8,7 +8,7 @@ delete an item
 const { localStorage } = window;
 
 function setItem({
-  id = ''
+  id = '',
   completed = false,
   created_at = 0,
   label,
