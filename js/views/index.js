@@ -4,3 +4,4 @@
 // https://www.contentful.com/blog/2017/04/04/es6-modules-support-lands-in-browsers-is-it-time-to-rethink-bundling/
 
 export { default as header } from './header.js';
+export { default as footer } from './footer.js';

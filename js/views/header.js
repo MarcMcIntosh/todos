@@ -5,9 +5,7 @@
   <input class="new-todo" placeholder="What needs to be done?" autofocus>
 </header> */
 
-import { createItem } from './store';
-
-export default function header() {
+export default function header(store) {
   const element = document.createElement('header');
   element.className = 'header';
 
@@ -19,8 +17,8 @@ export default function header() {
   input.className = "new-todo";
   input.setAttribute('placeholder', "What needs to be done?");
   input.setAttribute('autofocus', true);
-  input.onchange = (event) => createItem(event.target.value.trim());
-  
+  input.onchange = (event) => store.createItem(event.target.value.trim());
+
 
 
   element.appendChild(h1);

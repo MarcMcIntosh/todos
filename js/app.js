@@ -11,7 +11,7 @@ function app() {
 
   const element = document.createElement('section');
   element.className = 'todoapp';
-  element.appendChild(header());
+  element.appendChild(header(store));
 
   // footer
   if (Object.keys(state.posts) element.appendChild(footer());
