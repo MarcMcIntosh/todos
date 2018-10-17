@@ -53,4 +53,4 @@ function removedItem({ id }) {
   return getAll();
 }
 
-export { getAll, updateItem, createItem, removedItem };
+export default { getAll, updateItem, createItem, removedItem };
