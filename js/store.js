@@ -21,8 +21,7 @@ function setItem({
     created_at: created_at || updated_at,
     updated_at,
   };
-  console.log(obj)
-  return localStorage.setItem(id, JSON.stringify(obj));
+  return localStorage.setItem(obj.id, JSON.stringify(obj));
 }
 
 function getItem(id) {
