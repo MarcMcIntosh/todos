@@ -21,7 +21,7 @@ function totalTodos() {
   strong.appendChild(strongText);
   root.appendChild(strong);
 
-  const itemText = numberOfToDos === 1 ? 'item' : 'items';
+  const itemText = numberOfToDos === 1 ? ' item' : ' items';
   const text = document.createTextNode(itemText + ' left');
 
   root.appendChild(text);
