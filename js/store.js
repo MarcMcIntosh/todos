@@ -4,7 +4,6 @@ read all items
 update an item
 delete an item
 */
-
 const { localStorage } = window;
 
 function setItem({
@@ -22,6 +21,7 @@ function setItem({
     created_at: created_at || updated_at,
     updated_at,
   };
+  console.log(obj)
   return localStorage.setItem(id, JSON.stringify(obj));
 }
 
