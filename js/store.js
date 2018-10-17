@@ -13,14 +13,14 @@ function setItem({
   created_at = 0,
   label,
 } = {}) {
-  const update_at = new Date();
+  const updated_at = new Date();
 
   const obj = {
     id: id || `todos-marc-${created_at || updated_at}`,
     completed,
     label,
-    created_at: created_at || update_at,
-    update_at,
+    created_at: created_at || updated_at,
+    updated_at,
   };
   return localStorage.setItem(id, JSON.stringify(obj));
 }
