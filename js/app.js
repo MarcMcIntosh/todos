@@ -21,7 +21,7 @@ function app() {
   // footer
   window.addEventListener('storage', function() {
     drawListAndFooter(element);
-  }
+  });
   return element;
 };
 
