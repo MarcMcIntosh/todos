@@ -9,7 +9,7 @@ import { getAll } from '../store.js';
 import todoItem from './todoItem.js';
 
 export default function todoList() {
-  const todos = Object.values(getAll());
+  const todos = getAll();
   const listItems = todos.map(todoItem);
   return `
     <section class="main">
