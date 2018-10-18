@@ -20,6 +20,10 @@ function triggerUpdate() {
   return window.dispatchEvent( new Event('storage') );
 }
 
+function sortByMostRecent(a, b) {
+  return a.created_at > b.created_at;
+}
+
 function replaceAll(newTodos) {
   localStorage.setItem(STORAGE_ID, JSON.stringify(newTodos));
   return triggerUpdate();
@@ -29,7 +33,7 @@ export function getAll() {
   const storageString = localStorage.getItem(STORAGE_ID);
   const storageJson = JSON.parse(storageString);
   const todos = [].concat(storageJson || [])
-  return todos.sort((a, b) => a < b);
+  return todos.sort(sortByMostRecent);
 }
 
 function removeById(id) {
