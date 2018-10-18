@@ -8,14 +8,21 @@
 import { getAll } from '../store.js';
 import todoItem from './todoItem.js';
 
-export default function todoList() {
+function appendList(elem) {
   const todos = getAll();
   const listItems = todos.map(todoItem);
-  return `
-    <section class="main">
-      <input id="toddle-all" class="toggle-call" type="checkbox" />
-      <label for="toggle-all">Mark all as complete</label>
-      <ul class="todo-list">${listItems.join('\n')}</ul>
-    </section>
-  `;
+  elem.innerHTML = `<input id="toddle-all" class="toggle-call" type="checkbox" />
+  <label for="toggle-all">Mark all as complete</label>
+  <ul class="todo-list">${listItems.join('\n')}</ul>`;
+}
+
+export default function todoList() {
+  const root = document.createElement('section');
+  root.className = 'main';
+  appendList(root);
+  /* automatic redraw on list changes */
+  window.addEventListener('storage', function() {
+    appendList(root);
+  });
+  return root;
 }

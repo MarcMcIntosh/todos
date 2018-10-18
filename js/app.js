@@ -12,7 +12,7 @@ function app() {
 
   // footer
   if (getAll().length) {
-    element.innerHTML = todoList();
+    element.appendChild(todoList());
     element.appendChild(footer());
 
   }
