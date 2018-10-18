@@ -34,9 +34,9 @@ function totalTodos(elem) {
 export default function footer() {
   const root = document.createElement('footer');
   root.className = "footer";
-  totalTodos(elem);
+  totalTodos(root);
   window.addEventListener('strorage', function() {
-    totalTodos(elem);
+    totalTodos(root);
   });
   return root;
 }
