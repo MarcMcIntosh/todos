@@ -6,6 +6,15 @@ delete an item
 */
 const { localStorage } = window;
 
+/*
+function setItem(item) {
+  return localStorage.setItem('todos', JSON.stringify(item));
+}
+*/
+if(!localStorage.getItem('todos')) {
+  localStorage.setItem('todos', JSON.stringify([]));
+}
+
 function setItem({
   id = '',
   completed = false,
@@ -39,12 +48,16 @@ export function updateItem(item) {
   return setItem({ ...oldItem, ...item });
 }
 
-export function getAll() {
+/* export function getAll() {
   const todos = [];
   for (let i = (localStorage.length - 1); i > 0; i -= 1) {
     todos[i] = JSON.parse(localStorage.key(i));
   }
   return todos.reduce((a, b) => Object.assign({}, a, { [b.id] : b }), {});
+} */
+export function getAll() {
+  const items = localStorage.getItem('todos');
+  return JSON.parse(items);
 }
 
 export function removedItem({ id }) {
