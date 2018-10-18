@@ -3,7 +3,7 @@
 */
 // https://www.contentful.com/blog/2017/04/04/es6-modules-support-lands-in-browsers-is-it-time-to-rethink-bundling/
 import { header, footer, todoList } from './views/index.js';
-
+import { getAll } from './store/js';
 function app() {
 
   const element = document.createElement('section');
@@ -11,7 +11,7 @@ function app() {
   element.appendChild(header());
 
   // footer
-  if (window.localStorage.length) {
+  if (getAll().length) {
     element.innerHTML = todoList();
     element.appendChild(footer());
 
