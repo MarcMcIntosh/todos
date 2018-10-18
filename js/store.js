@@ -5,14 +5,14 @@ update an item
 delete an item
 */
 const { localStorage } = window;
-
+const STORAGE_ID = 'todos';
 /*
 function setItem(item) {
-  return localStorage.setItem('todos', JSON.stringify(item));
+  return localStorage.setItem(STORAGE_ID, JSON.stringify(item));
 }
 */
-if(!localStorage.getItem('todos')) {
-  localStorage.setItem('todos', JSON.stringify([]));
+if(!localStorage.getItem(STORAGE_ID)) {
+  localStorage.setItem(STORAGE_ID, JSON.stringify([]));
 }
 
 function setItem({
@@ -24,13 +24,16 @@ function setItem({
   const updated_at = new Date().toJSON();
 
   const obj = {
-    id: id || `todos-marc-${created_at || updated_at}`,
+    id: id || created_at || updated_at,
     completed,
     label,
     created_at: created_at || updated_at,
     updated_at,
   };
-  return localStorage.setItem(obj.id, JSON.stringify(obj));
+  const items = localStorage.getItem(STORAGE_ID);
+  items.push(obj);
+
+  return localStorage.setItem(STORAGE_ID, JSON.stringify(items));
 }
 
 function getItem(id) {
@@ -56,8 +59,8 @@ export function updateItem(item) {
   return todos.reduce((a, b) => Object.assign({}, a, { [b.id] : b }), {});
 } */
 export function getAll() {
-  const items = localStorage.getItem('todos');
-  return JSON.parse(items);
+  const items = localStorage.getItem(STORAGE_ID);
+  return JSON.parse(items).sort((a, b) => a < b);
 }
 
 export function removedItem({ id }) {
