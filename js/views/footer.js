@@ -12,29 +12,31 @@
 </footer>*/
 
 import { getAll } from '../store.js';
-
+/* use naviation event on filters */
 function totalTodos() {
   const numberOfToDos = getAll().length;
-  const root = document.createElement('span');
-  root.className = "todo-count";
-  const strong = document.createElement('strong');
-  const strongText = document.createTextNode(numberOfToDos);
-
-  strong.appendChild(strongText);
-  root.appendChild(strong);
-
-  const itemText = numberOfToDos === 1 ? ' item' : ' items';
-  const text = document.createTextNode(itemText + ' left');
-
-  root.appendChild(text);
-
-  return root;
-
+  elem.innerHTML = `
+    <span class="todo-count">
+      <strong>${numberOfToDos}</strong>
+      ${numberOfToDos === 1 ? 'item' : 'items'} left
+    </span>
+    <ul class="filters">
+      <li><a class="selected" href="#/">All</a></li>
+      <li><a href="#/active">Active</a></li>
+      <li><a href="#/completed">Completed</a></li>
+    </ul>
+  `;
+  if (numberOfToDos !== 0) {
+    elem.innerHTML += '<button class="clear-completed">Clear completed</button>';
+  }
 }
 
 export default function footer() {
   const root = document.createElement('footer');
   root.className = "footer";
-  root.appendChild(totalTodos());
+  totalTodos(elem);
+  window.addEventListener('strorage'. function() {
+    totalTodos(elem);
+  });
   return root;
 }
