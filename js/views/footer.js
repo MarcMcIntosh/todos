@@ -11,8 +11,10 @@
   <button class="clear-completed">Clear completed</button>
 </footer>*/
 
+import { getAll } from '../store.js';
+
 function totalTodos() {
-  const numberOfToDos = localStorage.length;
+  const numberOfToDos = getAll().length;
   const root = document.createElement('span');
   root.className = "todo-count";
   const strong = document.createElement('strong');
