@@ -7,11 +7,11 @@
 
 ### No todos
 
-+ [ ] When there are no todos, `#main` and `#footer` should be hidden.
++ [x] When there are no todos, `#main` and `#footer` should be hidden.
 
 ### New todo
 
-+ [ ] New todos are entered in the input at the top of the app.
++ [x] New todos are entered in the input at the top of the app.
 + [x] The input element should be focused when the page is loaded, preferably by using the `autofocus` input attribute.
 + [ ] Pressing Enter creates the todo, appends it to the todo list, and clears the input. Make sure to `.trim()` the input and then check that it's not empty before creating a new todo.
 
@@ -39,7 +39,7 @@ A todo item has three possible interactions:
 
 ### Counter
 
-+ [ ] Displays the number of active todos in a pluralized form.
++ [x] Displays the number of active todos in a pluralized form.
 + [x] Make sure the number is wrapped by a `<strong>` tag.
 + [x] Also make sure to pluralize the `item` word correctly: `0 items`, `1 item`, `2 items`. Example: **2** items left
 
@@ -50,8 +50,8 @@ A todo item has three possible interactions:
 ### Persistence
 
 + [ ] Your app should dynamically persist the todos to localStorage.
-+ [ ] If the framework has capabilities for persisting data (e.g. Backbone.sync), use that. Otherwise, use vanilla localStorage.
-+ [ ] If possible, use the keys `id`, `title`, `completed` for each item.
++ [x] If the framework has capabilities for persisting data (e.g. Backbone.sync), use that. Otherwise, use vanilla localStorage.
++ [x] If possible, use the keys `id`, `title`, `completed` for each item.
 + [ ] Make sure to use this format for the localStorage name: `todos-[framework]`.
 + [ ] Editing mode should not be persisted.
 
