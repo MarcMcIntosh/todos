@@ -29,8 +29,8 @@ function getItem(id) {
   return JSON.parse(itemString);
 }
 
-function createItem(label) {
-  setItem({ label });
+function createItem(title) {
+  if(title) { setItem({ title }) };
   return getAll();
 }
 
@@ -40,6 +40,7 @@ function updateItem(item) {
 }
 
 function getAll() {
+  // this is wrong
   const todos = [];
   for (let i = (localStorage.length - 1); i > 0; i =-1) {
     todos[i] = localStorage.key(i);
