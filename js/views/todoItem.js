@@ -15,7 +15,7 @@ export default function listItem({
   // onEdit,
   // onChange,
 }) {
-  const cn = completed ? "completed" : editting ? 'editting': "";
+  const cn = completed ? "completed" : "";
   return `
     <li class=${cn}>
       <div class="view">

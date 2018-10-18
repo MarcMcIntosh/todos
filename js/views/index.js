@@ -5,3 +5,4 @@
 
 export { default as header } from './header.js';
 export { default as footer } from './footer.js';
+export { default as todoList } from './todoList.js';
