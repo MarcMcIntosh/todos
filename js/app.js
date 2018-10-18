@@ -6,14 +6,16 @@ import { header, footer, todoList } from './views/index.js';
 import { getAll } from './store.js';
 
 function drawListAndFooter(element) {
-  const children = element.childNodes;
-  console.log(children);
-
+  const children = element.childNodes;;
+  while (element.childNodes.length > 1) {
+    element.removeChild(element.lastChild);
+  }
+/*
   if (children.length === 3) {
     element.removeChild(children[1]);
     element.removeChild(children[2]);
   }
-
+*/
   if (getAll().length) {
     element.appendChild(todoList());
     element.appendChild(footer());
