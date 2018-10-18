@@ -19,14 +19,14 @@ function setItem({
   id = '',
   completed = false,
   created_at = 0,
-  label,
+  title,
 } = {}) {
   const updated_at = new Date().toJSON();
 
   const obj = {
     id: id || created_at || updated_at,
     completed,
-    label,
+    title,
     created_at: created_at || updated_at,
     updated_at,
   };
