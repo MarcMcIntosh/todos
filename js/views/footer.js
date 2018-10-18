@@ -39,23 +39,6 @@ export default function footer() {
   return root;
 }
 
-function totalTodos(elem) {
-  const numberOfToDos = getAll().length;
-  elem.innerHTML = `
-    <span class="todo-count">
-      <strong>${numberOfToDos}</strong>
-      ${numberOfToDos === 1 ? 'item' : 'items'} left
-    </span>
-    <ul class="filters">
-      <li><a class="selected" href="#/">All</a></li>
-      <li><a href="#/active">Active</a></li>
-      <li><a href="#/completed">Completed</a></li>
-    </ul>
-  `;
-  if (numberOfToDos !== 0) {
-    elem.innerHTML += '<button class="clear-completed">Clear completed</button>';
-  }
-}
 /*
 function filters() {
   return `
