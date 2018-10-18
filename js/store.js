@@ -15,6 +15,11 @@ if(!localStorage.getItem(STORAGE_ID)) {
   localStorage.setItem(STORAGE_ID, JSON.stringify([]));
 }
 
+function triggerUpdate() {
+  /* Add event listeners for this event */
+  return window.dispatchEvent( new Event('storage') );
+}
+
 function setItem({
   id = '',
   completed = false,
@@ -33,7 +38,9 @@ function setItem({
   const todosAsString = localStorage.getItem(STORAGE_ID);
   const items = JSON.parse(todosAsString).concat(obj);
 
-  return localStorage.setItem(STORAGE_ID, JSON.stringify(items));
+  localStorage.setItem(STORAGE_ID, JSON.stringify(items));
+
+  return triggerUpdate();
 }
 
 function getItem(id) {
@@ -42,8 +49,7 @@ function getItem(id) {
 }
 
 export function createItem(title) {
-  if(title) { setItem({ title }) };
-  return getAll();
+  if (title) { setItem({ title }) };
 }
 
 export function updateItem(item) {
@@ -65,5 +71,5 @@ export function getAll() {
 
 export function removedItem({ id }) {
   localStorage.removedItem(id);
-  return getAll();
+  return triggerUpdate();
 }
