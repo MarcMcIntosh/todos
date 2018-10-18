@@ -11,7 +11,7 @@ function drawListAndFooter(element) {
   if (children.length === 3) {
     element.removeChild(children[1]);
     element.removeChild(children[2]);
-  ]
+  }
 
   if (getAll().length) {
     element.appendChild(todoList());
