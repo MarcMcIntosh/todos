@@ -29,17 +29,17 @@ function getItem(id) {
   return JSON.parse(itemString);
 }
 
-function createItem(title) {
+export function createItem(title) {
   if(title) { setItem({ title }) };
   return getAll();
 }
 
-function updateItem(item) {
+export function updateItem(item) {
   const oldItem = getItem(item.id);
   return setItem({ ...oldItem, ...item });
 }
 
-function getAll() {
+export function getAll() {
   const todos = [];
   for (let i = (localStorage.length - 1); i > 0; i -= 1) {
     todos[i] = JSON.parse(localStorage.key(i));
@@ -47,9 +47,7 @@ function getAll() {
   return todos.reduce((a, b) => Object.assign({}, a, { [b.id] : b }), {});
 }
 
-function removedItem({ id }) {
+export function removedItem({ id }) {
   localStorage.removedItem(id);
   return getAll();
 }
-
-export default { getAll, updateItem, createItem, removedItem };
