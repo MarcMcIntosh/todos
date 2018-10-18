@@ -16,10 +16,16 @@ export default function listItem({
   // onChange,
 }) {
   const cn = completed ? "completed" : "";
+  const checkBox = completed ? (
+    '<input class="toggle" type="checkbox" checked />'
+  ) : (
+    '<input class="toggle" type="checkbox" />'
+  );
+
+
   return `
     <li class=${cn}>
       <div class="view">
-        <input class="toggle" type="checkbox" checked=${completed} />
         <label>${title}</label>
         <button class="destroy" />
       </div>
