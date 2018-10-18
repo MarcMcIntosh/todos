@@ -30,8 +30,8 @@ function setItem({
     created_at: created_at || updated_at,
     updated_at,
   };
-  const items = localStorage.getItem(STORAGE_ID);
-  items.push(obj);
+  const todosAsString = localStorage.getItem(STORAGE_ID);
+  const items = JSON.parse(todosAsString).concat(obj);
 
   return localStorage.setItem(STORAGE_ID, JSON.stringify(items));
 }
