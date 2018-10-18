@@ -65,8 +65,10 @@ export function updateItem(item) {
   return todos.reduce((a, b) => Object.assign({}, a, { [b.id] : b }), {});
 } */
 export function getAll() {
-  const items = localStorage.getItem(STORAGE_ID);
-  return JSON.parse(items).sort((a, b) => a < b);
+  const storageString = localStorage.getItem(STORAGE_ID);
+  const storageJson = JSON.parse(str);
+  const todos = [].concat(storageJson || [])
+  return todos.sort((a, b) => a < b);
 }
 
 export function removedItem({ id }) {
