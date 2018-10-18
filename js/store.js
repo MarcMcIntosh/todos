@@ -66,7 +66,7 @@ export function updateItem(item) {
 } */
 export function getAll() {
   const storageString = localStorage.getItem(STORAGE_ID);
-  const storageJson = JSON.parse(storageStringr);
+  const storageJson = JSON.parse(storageString);
   const todos = [].concat(storageJson || [])
   return todos.sort((a, b) => a < b);
 }
