@@ -20,6 +20,22 @@ function triggerUpdate() {
   return window.dispatchEvent( new Event('storage') );
 }
 
+function replaceAll(newTodos) {
+  localStorage.setItem(STORAGE_ID, JSON.stringify(newTodos));
+  return triggerUpdate();
+}
+
+export function getAll() {
+  const storageString = localStorage.getItem(STORAGE_ID);
+  const storageJson = JSON.parse(storageString);
+  const todos = [].concat(storageJson || [])
+  return todos.sort((a, b) => a < b);
+}
+
+function removeById(id) {
+  return getAll().filter(({ id }) => id !== value );
+}
+
 function setItem({
   id = '',
   completed = false,
@@ -35,12 +51,12 @@ function setItem({
     created_at: created_at || updated_at,
     updated_at,
   };
-  const todosAsString = localStorage.getItem(STORAGE_ID);
-  const items = JSON.parse(todosAsString).concat(obj);
+  const oldTodos = getAll();
+  const todos = removeById(obj.id);
+  const items = todos.concat(obj);
 
-  localStorage.setItem(STORAGE_ID, JSON.stringify(items));
+  return replaceAll(items);
 
-  return triggerUpdate();
 }
 
 function getItem(id) {
@@ -57,21 +73,7 @@ export function updateItem(item) {
   return setItem({ ...oldItem, ...item });
 }
 
-/* export function getAll() {
-  const todos = [];
-  for (let i = (localStorage.length - 1); i > 0; i -= 1) {
-    todos[i] = JSON.parse(localStorage.key(i));
-  }
-  return todos.reduce((a, b) => Object.assign({}, a, { [b.id] : b }), {});
-} */
-export function getAll() {
-  const storageString = localStorage.getItem(STORAGE_ID);
-  const storageJson = JSON.parse(storageString);
-  const todos = [].concat(storageJson || [])
-  return todos.sort((a, b) => a < b);
-}
-
-export function removedItem({ id }) {
-  localStorage.removedItem(id);
-  return triggerUpdate();
+export function removedItem({ target: { value }}) {
+  const todos = removeById(value);
+  return replaceAll(todos);
 }
