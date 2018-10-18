@@ -8,7 +8,7 @@ function app() {
 
   const element = document.createElement('section');
   element.className = 'todoapp';
-  element.appendChild(header(store));
+  element.appendChild(header());
 
   // footer
   if (window.localStorage.length) {
