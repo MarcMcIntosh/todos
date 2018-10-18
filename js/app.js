@@ -7,6 +7,7 @@ import { getAll } from './store.js';
 
 function drawListAndFooter(element) {
   const children = element.childNodes;
+  console.log(children);
 
   if (children.length === 3) {
     element.removeChild(children[1]);
