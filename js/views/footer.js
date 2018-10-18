@@ -35,7 +35,7 @@ export default function footer() {
   const root = document.createElement('footer');
   root.className = "footer";
   totalTodos(elem);
-  window.addEventListener('strorage'. function() {
+  window.addEventListener('strorage', function() {
     totalTodos(elem);
   });
   return root;
