@@ -13,7 +13,7 @@
 
 import { getAll } from '../store.js';
 /* use naviation event on filters */
-function totalTodos() {
+function totalTodos(elem) {
   const numberOfToDos = getAll().length;
   elem.innerHTML = `
     <span class="todo-count">
