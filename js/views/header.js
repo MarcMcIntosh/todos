@@ -4,7 +4,7 @@
   (append toggle all button)
   <input class="new-todo" placeholder="What needs to be done?" autofocus>
 </header> */
-import { createItem } from '../stroe.js';
+import { createItem } from '../store.js';
 
 export default function header() {
   const element = document.createElement('header');
