@@ -4,17 +4,23 @@
 // https://www.contentful.com/blog/2017/04/04/es6-modules-support-lands-in-browsers-is-it-time-to-rethink-bundling/
 import { header, footer, todoList } from './views/index.js';
 import { getAll } from './store.js';
+
+function drawListAndFooter(element) {
+  if (getAll().length) {
+    element.appendChild(todoList());
+    element.appendChild(footer());
+  }
+}
+
 function app() {
 
   const element = document.createElement('section');
   element.className = 'todoapp';
   element.appendChild(header());
-
+  drawListAndFooter(element);
   // footer
-  if (getAll().length) {
-    element.appendChild(todoList());
-    element.appendChild(footer());
-
+  window.addEventListener('storage', function() {
+    drawListAndFooter(element);
   }
   return element;
 };
