@@ -21,6 +21,6 @@ export default function todoList() {
   root.className = 'main';
   appendList(root);
   /* automatic redraw on list changes */
-  // window.addEventListener('storage', function(event) { appendList(root); });
+  window.addEventListener('storage', function(event) { appendList(root); });
   return root;
 }

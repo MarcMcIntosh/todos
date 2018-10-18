@@ -19,9 +19,6 @@ function app() {
   element.appendChild(header());
   drawListAndFooter(element);
   // footer
-  window.addEventListener('storage', function() {
-    drawListAndFooter(element);
-  });
   return element;
 };
 
