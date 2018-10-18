@@ -40,10 +40,9 @@ function updateItem(item) {
 }
 
 function getAll() {
-  // this is wrong
   const todos = [];
-  for (let i = (localStorage.length - 1); i > 0; i =-1) {
-    todos[i] = localStorage.key(i);
+  for (let i = (localStorage.length - 1); i > 0; i -= 1) {
+    todos[i] = JSON.parse(localStorage.key(i));
   }
   return todos.reduce((a, b) => Object.assign({}, a, { [b.id] : b }), {});
 }
