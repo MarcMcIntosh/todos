@@ -19,7 +19,7 @@ export default function listItem({
   return `
     <li class=${cn}>
       <div class="view">
-        <input class="toggle" type="checkbox" checked />
+        <input class="toggle" type="checkbox" checked=${completed} />
         <label>${title}</label>
         <button class="destroy" />
       </div>
