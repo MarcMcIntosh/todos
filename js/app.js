@@ -7,10 +7,14 @@ import { getAll } from './store.js';
 
 function drawListAndFooter(element) {
   const children = element.childNodes;
-  if (children.length === 3 && getAll().length) {
+
+  if (children.length === 3) {
     element.removeChild(children[1]);
-    element.appendChild(todoList());
     element.removeChild(children[2]);
+  ]
+
+  if (getAll().length) {
+    element.appendChild(todoList());
     element.appendChild(footer());
   }
 }
