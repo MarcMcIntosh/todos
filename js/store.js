@@ -33,7 +33,7 @@ export function getAll() {
 }
 
 function removeById(id) {
-  return getAll().filter(({ id }) => id !== value );
+  return getAll().filter(item => item.id !== id );
 }
 
 function setItem({
