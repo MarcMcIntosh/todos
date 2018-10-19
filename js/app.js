@@ -3,7 +3,7 @@
 */
 // https://www.contentful.com/blog/2017/04/04/es6-modules-support-lands-in-browsers-is-it-time-to-rethink-bundling/
 import { header, footer, todoList } from './views/index.js';
-import { getAll} from './store.js';
+import { getAll, removeItem } from './store.js';
 
 function drawListAndFooter(element) {
   const children = element.childNodes;;
@@ -18,6 +18,12 @@ function drawListAndFooter(element) {
 
 }
 
+function attachUIHandelers() {
+  for( let button in document.getElementsByClassName('destory') {
+    button.addEventListener('click', removeItem);
+  });
+}
+
 function app() {
 
   const element = document.createElement('section');
@@ -27,12 +33,16 @@ function app() {
   // footer
   window.addEventListener('storage', function() {
     drawListAndFooter(element);
+    attachUIHandelers();
   })
   return element;
 };
 
 document.body.appendChild(app());
+attachUIHandelers();
 /* destory buttons */
+/* try to get all buttons by id then add removeItem
+dow document emit an update functiom ? */
 
 /* this works
 for( let node of document.getElementsByClassName('destroy')) {
