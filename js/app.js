@@ -21,10 +21,11 @@ function drawListAndFooter(element) {
     element.appendChild(footer());
   }
   /* destory buttons */
-  document.getElementsByClassName('destory').forEach(function(elem) {
+  // document.getElementsByClassName('destory');
+  /*.forEach(function(elem) {
     elem.onlick = removeItem;
     console.log(elem);
-  });
+  });*/
 }
 
 function app() {
