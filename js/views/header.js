@@ -20,7 +20,7 @@ export default function header() {
   input.setAttribute('autofocus', true);
   input.onblur = () => { input.value = '' };
 
-  input.keyup = (event) => {
+  input.onkeyup = (event) => {
     const str = event.target.value.trim();
     // event.preventDefault();
     if (str && event.keyCode === 13) {
