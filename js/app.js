@@ -3,7 +3,7 @@
 */
 // https://www.contentful.com/blog/2017/04/04/es6-modules-support-lands-in-browsers-is-it-time-to-rethink-bundling/
 import { header, footer, todoList } from './views/index.js';
-import { getAll, removeItem } from './store.js';
+import { getAll, removeItem, toggleComplete } from './store.js';
 
 function drawListAndFooter(element) {
   const children = element.childNodes;;
@@ -22,6 +22,11 @@ function attachUIHandelers() {
   for( let button of document.getElementsByClassName('destroy')) {
     button.addEventListener('click', removeItem);
   };
+
+  for (let toggle of document.getElementsByClassName('toggle')) {
+    toggle.addEventListener('change',  toggleComplete);
+  }
+
 }
 
 function app() {
