@@ -18,11 +18,15 @@ export default function header() {
   input.className = "new-todo";
   input.setAttribute('placeholder', "What needs to be done?");
   input.setAttribute('autofocus', true);
-  input.onchange = (event) => {
-    event.preventDefault();
+  input.onblur = () => { input.value = '' };
+
+  input.keyup = (event) => {
     const str = event.target.value.trim();
-    if (str) { createItem(str); }
-    input.value = '';
+    // event.preventDefault();
+    if (str && event.keyCode === 13) {
+      createItem(str);
+      input.value = '';
+    }
   };
 
   element.appendChild(h1);
