@@ -24,7 +24,10 @@ function attachUIHandelers() {
   };
 
   for (let toggle of document.getElementsByClassName('toggle')) {
-    toggle.addEventListener('change',  toggleComplete);
+    toggle.addEventListener('change',  (event) => {
+      console.log(event);
+      toggleComplete);
+    });
   }
 
 }
