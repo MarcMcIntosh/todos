@@ -65,7 +65,8 @@ function setItem({
 
 function getItem(id) {
   const todos = getAll();
-  return todos.filter(todo => todo.id === id)[0];
+  const [ item ] = todos.filter(todo => todo.id === id);
+  return item;
 }
 
 export function createItem(title) {
@@ -80,7 +81,6 @@ export function updateItem(item) {
 export function toggleComplete({ target: { value } }) {
   if (value) {
     const todo = getItem(value);
-    console.log(todo)
     todo.completed = !todo.completed;
     return setItem(todo);
   }
