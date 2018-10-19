@@ -30,7 +30,7 @@ export default function listItem({
     <li class=${cn}>
       <div class="view">
         <label>${title}</label>
-        <button id=${id} class="destroy" onClick=${removeItem}  />
+        <button id=${id} class="destroy" onclick=${removeItem}  />
       </div>
       <input class="edit" value="Create a TodoMVC template" />
     </li>`;
