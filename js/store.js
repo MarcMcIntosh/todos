@@ -64,8 +64,8 @@ function setItem({
 }
 
 function getItem(id) {
-  const itemString = localStorage.getItem(id);
-  return JSON.parse(itemString);
+  const todos = getAll();
+  return todos.filter(todo => todo.id === id);
 }
 
 export function createItem(title) {
@@ -75,6 +75,14 @@ export function createItem(title) {
 export function updateItem(item) {
   const oldItem = getItem(item.id);
   return setItem({ ...oldItem, ...item });
+}
+
+export function toggleComplete({ target: { value } }) {
+  if (value) {
+    const todo = getItem(value);
+    todo.completed = !todo.completed;
+    return setItem(todo);
+  }
 }
 
 export function removeItem({ target: { value } }) {
