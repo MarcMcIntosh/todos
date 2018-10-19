@@ -22,12 +22,11 @@ function drawListAndFooter(element) {
   }
   /* destory buttons */
   const nodes = document.getElementsByClassName('destory');
-  for(let node of nodes) { node.onclick = removeItem; } 
+  for(let node of nodes) {
+    node.onclick = removeItem;
+    console.log(node)
+  }
 
-  /*.forEach(function(elem) {
-    elem.onlick = removeItem;
-    console.log(elem);
-  });*/
 }
 
 function app() {
