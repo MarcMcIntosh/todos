@@ -21,7 +21,7 @@ function drawListAndFooter(element) {
     element.appendChild(footer());
   }
   /* destory buttons */
-  const nodes = document.getElementsByClassName('destory');
+  const nodes = document.getElementsByClassName('destroy');
   for(let node of nodes) {
     node.onclick = removeItem;
     console.log(node)
