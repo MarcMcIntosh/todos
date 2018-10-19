@@ -47,7 +47,6 @@ function setItem({
   title,
 } = {}) {
   const updated_at = new Date().toJSON();
-
   const obj = {
     id: id || created_at || updated_at,
     completed,
@@ -55,6 +54,7 @@ function setItem({
     created_at: created_at || updated_at,
     updated_at,
   };
+  console.log(obj);
   const oldTodos = getAll();
   const todos = removeById(obj.id);
   const items = todos.concat(obj);
@@ -80,6 +80,7 @@ export function updateItem(item) {
 export function toggleComplete({ target: { value } }) {
   if (value) {
     const todo = getItem(value);
+    console.log(todo)
     todo.completed = !todo.completed;
     return setItem(todo);
   }
