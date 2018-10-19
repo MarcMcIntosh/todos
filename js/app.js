@@ -19,11 +19,6 @@ function drawListAndFooter(element) {
   if (getAll().length) {
     element.appendChild(todoList());
     element.appendChild(footer());
-    /* destory buttons */
-
-    for(let node of document.getElementsByClassName('destroy')) {
-      node.onclick = console.log;
-    }
   }
 
 }
@@ -42,3 +37,8 @@ function app() {
 };
 
 document.body.appendChild(app());
+/* destory buttons */
+
+for( let node of document.getElementsByClassName('destroy')) {
+  node.onclick = console.log;
+}
