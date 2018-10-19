@@ -13,7 +13,7 @@
 
 + [x] New todos are entered in the input at the top of the app.
 + [x] The input element should be focused when the page is loaded, preferably by using the `autofocus` input attribute.
-+ [ ] Pressing Enter creates the todo, appends it to the todo list, and clears the input. Make sure to `.trim()` the input and then check that it's not empty before creating a new todo.
++ [x] Pressing Enter creates the todo, appends it to the todo list, and clears the input. Make sure to `.trim()` the input and then check that it's not empty before creating a new todo.
 
 ### Mark all as complete
 
@@ -29,7 +29,7 @@ A todo item has three possible interactions:
 
 2. [ ] Double-clicking the `<label>` activates editing mode, by toggling the `.editing` class on its `<li>`
 
-3. [ ] Hovering over the todo shows the remove button (`.destroy`)
+3. [x] Hovering over the todo shows the remove button (`.destroy`)
 
 ### Editing
 
