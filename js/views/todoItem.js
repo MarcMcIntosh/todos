@@ -7,6 +7,7 @@
   </div>
    <input class="edit" value="Create a TodoMVC template">
 </li> */
+import { removeItem } from '../store.js';
 
 export default function listItem({
   completed,
@@ -28,7 +29,7 @@ export default function listItem({
     <li class=${cn}>
       <div class="view">
         <label>${title}</label>
-        <button id=${id} class="destroy" />
+        <button id=${id} class="destroy" onclick="${removeItem}"/>
       </div>
       <input class="edit" value="Create a TodoMVC template" />
     </li>`;
