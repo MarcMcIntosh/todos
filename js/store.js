@@ -21,7 +21,7 @@ function triggerUpdate() {
 }
 
 function sortByMostRecent(a, b) {
-  return a.created_at > b.created_at;
+  return a.created_at < b.created_at;
 }
 
 function replaceAll(newTodos) {
