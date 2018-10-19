@@ -65,7 +65,7 @@ function setItem({
 
 function getItem(id) {
   const todos = getAll();
-  return todos.filter(todo => todo.id === id);
+  return todos.filter(todo => todo.id === id)[0];
 }
 
 export function createItem(title) {
