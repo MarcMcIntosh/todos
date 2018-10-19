@@ -22,13 +22,8 @@ function drawListAndFooter(element) {
   }
   /* destory buttons */
   const nodes = document.getElementsByClassName('destory');
-  /* for(let node of nodes) {
-    node.onlick = removeItem;
-  } */
-  [].forEach.call(nodes, function(node) {
-    node.onlick = removeItem;
-    console.log(node);
-  })
+  for(let node of nodes) { node.onclick = removeItem; } 
+
   /*.forEach(function(elem) {
     elem.onlick = removeItem;
     console.log(elem);
