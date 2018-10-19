@@ -21,7 +21,7 @@ function drawListAndFooter(element) {
 function attachUIHandelers() {
   for( let button in document.getElementsByClassName('destory')) {
     button.addEventListener('click', removeItem);
-  });
+  };
 }
 
 function app() {
