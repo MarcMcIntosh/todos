@@ -21,9 +21,9 @@ export default function listItem({
 }) {
   const cn = completed ? "completed" : "";
   const checkBox = completed ? (
-    '<input class="toggle" type="checkbox" checked />'
+    `<input value=${id} class="toggle" type="checkbox" checked />`
   ) : (
-    '<input class="toggle" type="checkbox" />'
+    `<input value=${id} class="toggle" type="checkbox" />`
   );
 
   /*
@@ -39,8 +39,9 @@ export default function listItem({
     return `
       <li class=${cn}>
         <div class="view">
+          ${checkBox}
           <label>${title}</label>
-          <button id=${id} class="destroy" />
+          <button value=${id} class="destroy" />
         </div>
         <input class="edit" value="Create a TodoMVC template" />
       </li>`;

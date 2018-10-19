@@ -77,7 +77,7 @@ export function updateItem(item) {
   return setItem({ ...oldItem, ...item });
 }
 
-export function removeItem({ target: { id } }) {
-  const todos = removeById(id);
+export function removeItem({ target: { value } }) {
+  const todos = removeById(value);
   return replaceAll(todos);
 }
