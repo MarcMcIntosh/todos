@@ -25,7 +25,7 @@
 
 A todo item has three possible interactions:
 
-1. [ ] Clicking the checkbox marks the todo as complete by updating its `completed` value and toggling the class `completed` on its parent `<li>`
+1. [x] Clicking the checkbox marks the todo as complete by updating its `completed` value and toggling the class `completed` on its parent `<li>`
 
 2. [ ] Double-clicking the `<label>` activates editing mode, by toggling the `.editing` class on its `<li>`
 
@@ -49,7 +49,7 @@ A todo item has three possible interactions:
 
 ### Persistence
 
-+ [ ] Your app should dynamically persist the todos to localStorage.
++ [x] Your app should dynamically persist the todos to localStorage.
 + [x] If the framework has capabilities for persisting data (e.g. Backbone.sync), use that. Otherwise, use vanilla localStorage.
 + [x] If possible, use the keys `id`, `title`, `completed` for each item.
 + [ ] Make sure to use this format for the localStorage name: `todos-[framework]`.
